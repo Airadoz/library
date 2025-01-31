@@ -12,9 +12,9 @@ openModal.addEventListener("click", ()=>{
   modal.showModal();
 })
 closeModal.addEventListener("click", ()=>{
-  addBook();
-  clearInputValue();
-  modal.close();
+  // addBook();
+  // clearInputValue();
+  // modal.close();
 })
 
 function Book(title, author, pages, read) {
@@ -27,8 +27,6 @@ function addBook(){
   const book = new Book(title.value,author.value,pages.value,book_read.value);
   myLibrary.push(book)
   console.log(myLibrary)
-}
-function clearInputValue(){
   title.innerHTML = "";
   title.value = "";
   author.innerHTML = "";
@@ -36,4 +34,7 @@ function clearInputValue(){
   pages.innerHTML = "";
   pages.value = "";
   book_read.value = "no"
+}
+function clearInputValue(){
+
 }
