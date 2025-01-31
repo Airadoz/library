@@ -44,6 +44,7 @@ function dislayBook(array){
     const read = document.createElement("div");
 
     div.classList.add("book");
+    div.setAttribute("data-book-number",`${number_of_items}`)
     title.innerHTML = array[number_of_items].title;
     author.innerHTML = array[number_of_items].author;
     pages.innerHTML = array[number_of_items].pages;
