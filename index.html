@@ -12,13 +12,14 @@
         <div class="library_title">
             <h1>Enter the home of books</h1>
             <button class="open-modal">Add book</button>
+            <button class="remove-book">Remove book</button>
         </div>
         <div class="grid book_wrapper">
 
         </div>
     </div>
     <dialog class="modal">
-        <form action="" method="dialog" onsubmit="addBook()">
+        <form action="" method="dialog" onsubmit="addBook();dislayBook(myLibrary)">
             <label for="title">Please enter book's name</label>
             <input type="text" id="title" required>
             <label for="author">Enter book's author</label>
