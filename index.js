@@ -11,11 +11,6 @@ const book_read = document.getElementById("read");
 openModal.addEventListener("click", ()=>{
   modal.showModal();
 })
-closeModal.addEventListener("click", ()=>{
-  // addBook();
-  // clearInputValue();
-  // modal.close();
-})
 
 function Book(title, author, pages, read) {
   this.title = title;
