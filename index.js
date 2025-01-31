@@ -12,6 +12,7 @@ openModal.addEventListener("click", ()=>{
   modal.showModal();
 })
 closeModal.addEventListener("click", ()=>{
+  addBook();
   modal.close();
 })
 
@@ -20,4 +21,8 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
+}
+function addBook(){
+  const book = new Book(title.value,author.value,pages.value,book_read.value);
+  myLibrary.push(book)
 }
