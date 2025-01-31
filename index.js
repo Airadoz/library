@@ -22,6 +22,9 @@ function addBook(){
   const book = new Book(title.value,author.value,pages.value,book_read.value);
   myLibrary.push(book)
   console.log(myLibrary)
+  clearInputValue()
+}
+function clearInputValue(){
   title.innerHTML = "";
   title.value = "";
   author.innerHTML = "";
@@ -29,7 +32,4 @@ function addBook(){
   pages.innerHTML = "";
   pages.value = "";
   book_read.value = "no"
-}
-function clearInputValue(){
-
 }
