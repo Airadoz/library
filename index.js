@@ -26,7 +26,7 @@ function Book(title, author, pages, read, id) {
 function addBook(){
   const book = new Book(title.value,author.value,pages.value,book_read.value,number_of_items);
   myLibrary.push(book)
-  // console.log(myLibrary)
+  console.log(myLibrary)
   clearInputValue()
 }
 function clearInputValue(){
@@ -37,6 +37,9 @@ function clearInputValue(){
   pages.innerHTML = "";
   pages.value = "";
   book_read.value = "no"
+}
+function template(){
+  
 }
 function dislayBook(array){
   const div = document.createElement("div");
@@ -75,9 +78,26 @@ closeModal.addEventListener("click",()=>{
   }, 250)
 })
 function editBook(element){
-  let name = document.querySelector(`[data-book-number='${element.getAttribute("data-book-number")}'] .title-info`).textContent;
-  console.log(name)
-}
+    modal.showModal();
+
+  let title = document.querySelector(`[data-book-number='${element.getAttribute("data-book-number")}'] .title-info`).textContent;
+  let author = document.querySelector(`[data-book-number='${element.getAttribute("data-book-number")}'] .author-info`).textContent;
+  let pages = document.querySelector(`[data-book-number='${element.getAttribute("data-book-number")}'] .pages-info`).textContent;
+  let read = document.querySelector(`[data-book-number='${element.getAttribute("data-book-number")}'] .read-info`).textContent;
+  let bookToChange = [];
+  let Book = {}
+  Book.title = title
+  Book.author = author;
+  Book.pages = pages;
+  Book.read = read
+  bookToChange.push(Book)
+  console.log(Book, bookToChange)
+  closeModal.addEventListener("click",()=>{
+    // deleteBook(element)
+    addBook(myLibrary[`${element.getAttribute("data-book-number")}`]);
+    modal.close();
+  })
+} 
 
 function getBookToEdit(books){
   books.forEach(book => {
