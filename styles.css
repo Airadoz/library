@@ -51,6 +51,11 @@ body, html{
     scroll-behavior: smooth; 
 }
 
-/* .modal{
-    display: none;
-} */
+.modal{
+    margin: auto;
+    padding: 2rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
