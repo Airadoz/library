@@ -189,6 +189,14 @@ function deleteBook() {
 	}
 }
 
+function book_elems() {
+	let editBtns = document.querySelectorAll(".edit");
+	if (editBtns.length === 0) {
+		editBtns = document.querySelectorAll(".edit");
+	}
+	return editBtns;
+}
+
 closeModal.addEventListener("click", (e) => {
 	e.preventDefault();
 	let check = checkForEmptyVal(title, author, pages, read);
@@ -212,3 +220,4 @@ closeModal.addEventListener("click", (e) => {
 });
 
 dislayBook(myLibrary);
+book_elems();
