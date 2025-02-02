@@ -67,7 +67,7 @@ function enforceFullInfo() {
 	let check = checkForEmptyVal(title, author, pages, read);
 	let template = incompleteInfoTemplate();
 	if (check !== undefined && check.value === "a") {
-		console.log("a is empty");
+		// console.log("a is empty");
 		if (elementAdded.title === "") {
 			title.insertAdjacentElement("beforebegin", template.div);
 			elementAdded.title = "title";
@@ -81,7 +81,7 @@ function enforceFullInfo() {
 	}
 
 	if (check !== undefined && check.value === "b") {
-		console.log("b is empty");
+		// console.log("b is empty");
 		if (elementAdded.author === "") {
 			author.insertAdjacentElement("beforebegin", template.div);
 			elementAdded.author = "author";
@@ -95,7 +95,7 @@ function enforceFullInfo() {
 	}
 
 	if (check !== undefined && check.value === "c") {
-		console.log("c is empty");
+		// console.log("c is empty");
 		if (elementAdded.pages === "") {
 			pages.insertAdjacentElement("beforebegin", template.div);
 			elementAdded.pages = "pages";
@@ -109,7 +109,7 @@ function enforceFullInfo() {
 	}
 
 	if (check !== undefined && check.value === "d") {
-		console.log("d is empty");
+		// console.log("d is empty");
 		if (elementAdded.read === "") {
 			read.insertAdjacentElement("beforebegin", template.div);
 			elementAdded.read = "read";
@@ -127,9 +127,9 @@ function checkInputChanges(...args) {
 	args.forEach((element) => {
 		element.addEventListener("change", () => {
 			let check = checkForEmptyVal(title, author, pages, read);
-			console.log("change!");
+			// console.log("change!");
 			if (check === undefined) {
-				console.log("undefined!");
+				// console.log("undefined!");
 				enforceFullInfo();
 				clearIncompleteDivs();
 			}
@@ -168,7 +168,7 @@ function dislayBook(array) {
 			template.edit.setAttribute("id", `${book.id}`);
 			template.div.setAttribute("data-book-number", `${book.id}`);
 			template.div.append(template.title, template.author, template.pages, template.read, template.edit);
-			console.log(book);
+			// console.log(book);
 			book_wrapper.append(template.div);
 			number_of_items += 1;
 			book.displayed = true;
@@ -204,7 +204,7 @@ function getBookToEdit() {
 	editBtns.forEach((book) => {
 		book.addEventListener("click", (e) => {
 			id = e.target.getAttribute("id");
-			console.log(id);
+			// console.log(id);
 			editBook(id);
 			return id;
 		});
@@ -212,7 +212,7 @@ function getBookToEdit() {
 }
 function getEditVars(id) {
 	let vars = [];
-	console.log(id);
+	// console.log(id);
 	let a = document.querySelector(`[data-book-number='${id}'] .title-info`);
 	let b = document.querySelector(`[data-book-number='${id}'] .author-info`);
 	let c = document.querySelector(`[data-book-number='${id}'] .pages-info`);
@@ -226,7 +226,7 @@ function setInputValues(a, b, c, d, args) {
 	array = [a, b, c, d];
 	for (i = 0; i < array.length; i++) {
 		array[i].value = args[i].textContent;
-		console.log(array[i], args[i]);
+		// console.log(array[i], args[i]);
 	}
 }
 function editBook(id) {
@@ -243,7 +243,7 @@ function editBookCard(id, a, b, c, d) {
 	array = [a, b, c, d];
 	for (i = 0; i < array.length; i++) {
 		vars[i].innerHTML = array[i].value;
-		console.log(vars[i], array[i]);
+		// console.log(vars[i], array[i]);
 	}
 }
 editBtns = book_elems();
@@ -258,11 +258,11 @@ closeModal.addEventListener("click", (e) => {
 	let check = checkForEmptyVal(title, author, pages, read);
 	if (edit === false) {
 		if (check !== undefined && check.true === true) {
-			console.log("HA", checkForEmptyVal(title, author, pages, read));
+			// console.log("HA", checkForEmptyVal(title, author, pages, read));
 			enforceFullInfo();
 		} else {
 			myLibrary.push(addBook(title, author, pages, read, number_of_items));
-			console.log(myLibrary);
+			// console.log(myLibrary);
 			dislayBook(myLibrary);
 			clearInputValues();
 			getBookToEdit();
