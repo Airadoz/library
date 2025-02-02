@@ -123,3 +123,11 @@ function checkInputChanges(...args) {
 	});
 }
 checkInputChanges(title, author, pages, read);
+function clearIncompleteDivs() {
+	let to_delete = document.querySelectorAll(".incomplete");
+	if (to_delete.length > 0) {
+		to_delete.forEach((element) => {
+			element.remove();
+		});
+	}
+}
