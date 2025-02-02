@@ -15,6 +15,12 @@ let elementAdded = { title: "", author: "", pages: "", read: "" };
 let edit = false;
 let displayed = false;
 
+let myLibrary = [
+	{ title: "Hobbit", author: "Tolkien", pages: 1000, read: "No", id: 0, displayed: false },
+	{ title: "Catcher in the wry", author: "Selindger", pages: 400, read: "No", id: 1, displayed: false },
+	{ title: "Catcher in the wry", author: "Selindger", pages: 400, read: "Yes", id: 2, displayed: false },
+];
+
 openModal.addEventListener("click", () => {
 	modal.showModal();
 });
@@ -167,3 +173,5 @@ function dislayBook(array) {
 		}
 	});
 }
+
+dislayBook(myLibrary);
