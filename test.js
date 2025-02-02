@@ -108,3 +108,18 @@ function enforceFullInfo() {
 		}
 	}
 }
+
+function checkInputChanges(...args) {
+	args.forEach((element) => {
+		element.addEventListener("change", () => {
+			let check = checkForEmptyVal(title, author, pages, read);
+			console.log("change!");
+			if (check === undefined) {
+				console.log("undefined!");
+				enforceFullInfo();
+				clearIncompleteDivs();
+			}
+		});
+	});
+}
+checkInputChanges(title, author, pages, read);
