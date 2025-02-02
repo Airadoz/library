@@ -220,6 +220,13 @@ function getEditVars(id) {
 	e.textContent = "Submit change";
 	return vars;
 }
+function setInputValues(a, b, c, d, args) {
+	array = [a, b, c, d];
+	for (i = 0; i < array.length; i++) {
+		array[i].value = args[i].textContent;
+		console.log(array[i], args[i]);
+	}
+}
 
 closeModal.addEventListener("click", (e) => {
 	e.preventDefault();
