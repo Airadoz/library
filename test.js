@@ -236,6 +236,14 @@ function editBook(id) {
 		editBookCard(id, title, author, pages, read);
 	});
 }
+function editBookCard(id, a, b, c, d) {
+	let vars = getEditVars(id);
+	array = [a, b, c, d];
+	for (i = 0; i < array.length; i++) {
+		vars[i].innerHTML = array[i].value;
+		console.log(vars[i], array[i]);
+	}
+}
 
 closeModal.addEventListener("click", (e) => {
 	e.preventDefault();
