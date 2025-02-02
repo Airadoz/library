@@ -22,8 +22,8 @@ let myLibrary = [
 ];
 
 openModal.addEventListener("click", () => {
+	let e = document.querySelector(".close-modal");
 	e.textContent = "Add book";
-	modal.showModal();
 	modal.showModal();
 });
 
