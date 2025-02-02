@@ -196,6 +196,18 @@ function book_elems() {
 	}
 	return editBtns;
 }
+function getBookToEdit() {
+	let id;
+	editBtns = book_elems();
+	editBtns.forEach((book) => {
+		book.addEventListener("click", (e) => {
+			id = e.target.getAttribute("id");
+			console.log(id);
+			editBook(id);
+			return id;
+		});
+	});
+}
 
 closeModal.addEventListener("click", (e) => {
 	e.preventDefault();
