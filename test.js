@@ -174,4 +174,33 @@ function dislayBook(array) {
 	});
 }
 
+function clearInputValues() {
+	title.value = "";
+	author.value = "";
+	pages.value = "";
+	book_read.value = "-";
+}
+
+closeModal.addEventListener("click", (e) => {
+	e.preventDefault();
+	let check = checkForEmptyVal(title, author, pages, read);
+	if (edit === false) {
+		if (check !== undefined && check.true === true) {
+			console.log("HA", checkForEmptyVal(title, author, pages, read));
+			enforceFullInfo();
+		} else {
+			myLibrary.push(addBook(title, author, pages, read, number_of_items));
+			console.log(myLibrary);
+			dislayBook(myLibrary);
+			clearInputValues();
+			getBookToEdit();
+			modal.close();
+		}
+	} else {
+		// let a = getBookToEdit();
+		// editBookCard(a);
+		modal.close();
+	}
+});
+
 dislayBook(myLibrary);
