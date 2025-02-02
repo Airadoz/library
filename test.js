@@ -16,9 +16,9 @@ let edit = false;
 let displayed = false;
 
 let myLibrary = [
-	{ title: "Hobbit", author: "Tolkien", pages: 1000, read: "No", id: 0, displayed: false },
-	{ title: "Catcher in the wry", author: "Selindger", pages: 400, read: "No", id: 1, displayed: false },
-	{ title: "Catcher in the wry", author: "Selindger", pages: 400, read: "Yes", id: 2, displayed: false },
+	{ title: "Pride and Prejudice", author: "Jane Austen", pages: 1000, read: "No", id: 0, displayed: false },
+	{ title: "To Kill a Mockingbird", author: "Harper Lee", pages: 400, read: "No", id: 1, displayed: false },
+	{ title: "The Great Gatsby", author: "F. Scott Fitzgerald", pages: 400, read: "Yes", id: 2, displayed: false },
 ];
 
 openModal.addEventListener("click", () => {
