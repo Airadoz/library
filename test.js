@@ -208,6 +208,18 @@ function getBookToEdit() {
 		});
 	});
 }
+function getEditVars(id) {
+	let vars = [];
+	console.log(id);
+	let a = document.querySelector(`[data-book-number='${id}'] .title-info`);
+	let b = document.querySelector(`[data-book-number='${id}'] .author-info`);
+	let c = document.querySelector(`[data-book-number='${id}'] .pages-info`);
+	let d = document.querySelector(`[data-book-number='${id}'] .read-info`);
+	vars.push(a, b, c, d);
+	let e = document.querySelector(".close-modal");
+	e.textContent = "Submit change";
+	return vars;
+}
 
 closeModal.addEventListener("click", (e) => {
 	e.preventDefault();
