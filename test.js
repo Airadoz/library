@@ -39,3 +39,12 @@ function checkForEmptyVal(a, b, c, d) {
 		return { true: true, value: "d" };
 	}
 }
+
+function incompleteInfoTemplate() {
+	let template = {};
+	let div = document.createElement("div");
+	div.classList.add("incomplete");
+	div.textContent = "This field is required";
+	template.div = div;
+	return template;
+}
