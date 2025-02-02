@@ -63,6 +63,7 @@ html {
 	height: 100%;
 	scroll-behavior: smooth;
 }
+/*resets end*/
 
 .modal {
 	margin: auto;
@@ -71,10 +72,19 @@ html {
 form {
 	display: flex;
 	flex-direction: column;
+	gap: 0.5rem;
+}
+form div > label {
+	margin-bottom: 0.5rem;
+}
+input {
+	padding: 0.5rem;
 }
 .grid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	gap: 1.5rem;
+	margin: 2rem 1rem 0 1rem;
 }
 .incomplete {
 	width: 100%;
@@ -85,4 +95,56 @@ form {
 form div {
 	display: flex;
 	flex-direction: column;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.book {
+	padding: 1.5rem;
+	border: 1px solid #ccc;
+}
+.book div {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 0.5rem;
+}
+.btns {
+	display: flex;
+	justify-content: space-around;
+}
+button {
+	padding: 0.5rem 1rem;
+}
+button:not(.remove-book) {
+	background-color: blanchedalmond;
+}
+.remove-book {
+	background-color: rgba(0, 0, 0, 0.781);
+	color: white;
+}
+.book {
+	display: grid;
+	grid-template-rows: repeat(5, 1fr);
+	gap: 0.5rem;
+}
+.title-info,
+.author-info,
+.pages-info,
+.read-info {
+	font-weight: 800;
+	font-style: italic;
+}
+.title-info {
+	color: #0066bf;
+}
+.author-info {
+	color: #00a1a1fa;
+}
+.pages-info {
+	color: #35b11dfa;
+}
+.read-info {
+	color: brown;
 }
