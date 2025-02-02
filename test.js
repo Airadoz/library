@@ -48,3 +48,63 @@ function incompleteInfoTemplate() {
 	template.div = div;
 	return template;
 }
+
+function enforceFullInfo() {
+	let check = checkForEmptyVal(title, author, pages, read);
+	let template = incompleteInfoTemplate();
+	if (check !== undefined && check.value === "a") {
+		console.log("a is empty");
+		if (elementAdded.title === "") {
+			title.insertAdjacentElement("beforebegin", template.div);
+			elementAdded.title = "title";
+		} else return;
+	} else {
+		let to_delete = document.querySelector(".title-info .incomplete");
+		if (to_delete !== null) {
+			to_delete.remove();
+			elementAdded.title = "";
+		}
+	}
+
+	if (check !== undefined && check.value === "b") {
+		console.log("b is empty");
+		if (elementAdded.author === "") {
+			author.insertAdjacentElement("beforebegin", template.div);
+			elementAdded.author = "author";
+		} else return;
+	} else {
+		let to_delete = document.querySelector(".author-info .incomplete");
+		if (to_delete !== null) {
+			to_delete.remove();
+			elementAdded.author = "";
+		}
+	}
+
+	if (check !== undefined && check.value === "c") {
+		console.log("c is empty");
+		if (elementAdded.pages === "") {
+			pages.insertAdjacentElement("beforebegin", template.div);
+			elementAdded.pages = "pages";
+		} else return;
+	} else {
+		let to_delete = document.querySelector(".page-info .incomplete");
+		if (to_delete !== null) {
+			to_delete.remove();
+			elementAdded.pages = "";
+		}
+	}
+
+	if (check !== undefined && check.value === "d") {
+		console.log("d is empty");
+		if (elementAdded.read === "") {
+			read.insertAdjacentElement("beforebegin", template.div);
+			elementAdded.read = "read";
+		} else return;
+	} else {
+		let to_delete = document.querySelector(".read-info .incomplete");
+		if (to_delete !== null) {
+			to_delete.remove();
+			elementAdded.read = "";
+		}
+	}
+}
