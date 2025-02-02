@@ -8,3 +8,7 @@ const pages = document.getElementById("pages");
 const book_read = document.getElementById("read");
 
 let book_wrapper = document.querySelector(".book_wrapper");
+
+openModal.addEventListener("click", () => {
+	modal.showModal();
+});
