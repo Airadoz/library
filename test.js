@@ -12,3 +12,15 @@ let book_wrapper = document.querySelector(".book_wrapper");
 openModal.addEventListener("click", () => {
 	modal.showModal();
 });
+
+function Book(title, author, pages, read, id) {
+	this.title = title;
+	this.author = author;
+	this.pages = pages;
+	this.read = read;
+	this.id = id;
+}
+function addBook(a, b, c, d, e) {
+	const book = new Book(a.value, b.value, c.value, d.value, e);
+	return book;
+}
