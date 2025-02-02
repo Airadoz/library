@@ -9,6 +9,12 @@ const book_read = document.getElementById("read");
 
 let book_wrapper = document.querySelector(".book_wrapper");
 
+let number_of_items = 0;
+let books;
+let elementAdded = { title: "", author: "", pages: "", read: "" };
+let edit = false;
+let displayed = false;
+
 openModal.addEventListener("click", () => {
 	modal.showModal();
 });
@@ -130,4 +136,34 @@ function clearIncompleteDivs() {
 			element.remove();
 		});
 	}
+}
+
+function dislayBook(array) {
+	array.forEach((book) => {
+		if (book.displayed === true) {
+			return;
+		} else {
+			let template = {};
+			template.div = document.createElement("div");
+			template.title = document.createElement("div");
+			template.author = document.createElement("div");
+			template.pages = document.createElement("div");
+			template.read = document.createElement("div");
+			template.edit = document.createElement("button");
+			template.edit.textContent = "Edit a book?";
+			template.edit.classList.add("edit");
+			template.div.classList.add("book");
+			template.title.innerHTML = "Book's title is: " + `<span class="title-info">${book.title}</span>`;
+			template.author.innerHTML = "Book's author is: " + `<span class="author-info">${book.author}</span>`;
+			template.pages.innerHTML = "There are " + `<span class="pages-info">${book.pages}</span>` + " pages in the book";
+			template.read.innerHTML = "Book is read? " + `<span class="read-info">${book.read}</span>`;
+			template.edit.setAttribute("id", `${book.id}`);
+			template.div.setAttribute("data-book-number", `${book.id}`);
+			template.div.append(template.title, template.author, template.pages, template.read, template.edit);
+			console.log(book);
+			book_wrapper.append(template.div);
+			number_of_items += 1;
+			book.displayed = true;
+		}
+	});
 }
