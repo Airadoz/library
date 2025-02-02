@@ -24,3 +24,18 @@ function addBook(a, b, c, d, e) {
 	const book = new Book(a.value, b.value, c.value, d.value, e);
 	return book;
 }
+
+function checkForEmptyVal(a, b, c, d) {
+	if (a.value === "") {
+		return { true: true, value: "a" };
+	}
+	if (b.value === "") {
+		return { true: true, value: "b" };
+	}
+	if (c.value === "") {
+		return { true: true, value: "c" };
+	}
+	if (d.value === "-") {
+		return { true: true, value: "d" };
+	}
+}
