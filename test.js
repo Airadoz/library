@@ -227,6 +227,15 @@ function setInputValues(a, b, c, d, args) {
 		console.log(array[i], args[i]);
 	}
 }
+function editBook(id) {
+	edit = true;
+	let vars = getEditVars(id);
+	setInputValues(title, author, pages, read, vars);
+	modal.showModal();
+	closeModal.addEventListener("click", () => {
+		editBookCard(id, title, author, pages, read);
+	});
+}
 
 closeModal.addEventListener("click", (e) => {
 	e.preventDefault();
