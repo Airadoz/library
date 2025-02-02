@@ -22,6 +22,8 @@ let myLibrary = [
 ];
 
 openModal.addEventListener("click", () => {
+	e.textContent = "Add book";
+	modal.showModal();
 	modal.showModal();
 });
 
@@ -244,6 +246,12 @@ function editBookCard(id, a, b, c, d) {
 		console.log(vars[i], array[i]);
 	}
 }
+editBtns = book_elems();
+editBtns.forEach((book) => {
+	book.addEventListener("click", (e) => {
+		editBook(getBookToEdit());
+	});
+});
 
 closeModal.addEventListener("click", (e) => {
 	e.preventDefault();
@@ -268,4 +276,5 @@ closeModal.addEventListener("click", (e) => {
 });
 
 dislayBook(myLibrary);
+getBookToEdit();
 book_elems();
