@@ -180,6 +180,14 @@ function clearInputValues() {
 	pages.value = "";
 	book_read.value = "-";
 }
+function deleteBook() {
+	let book_to_delete = document.querySelector(".grid.book_wrapper div.book:last-child");
+	let array_check = book_to_delete.getAttribute("data-book-number");
+	if (book_to_delete !== null) {
+		book_to_delete.remove();
+		myLibrary.pop(myLibrary.length - array_check);
+	}
+}
 
 closeModal.addEventListener("click", (e) => {
 	e.preventDefault();
