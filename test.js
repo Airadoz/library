@@ -6,3 +6,5 @@ const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const pages = document.getElementById("pages");
 const book_read = document.getElementById("read");
+
+let book_wrapper = document.querySelector(".book_wrapper");
